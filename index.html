@@ -1,102 +1,20 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Binary Lamps</title>
-<!-- Bootstrap -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css">
-<link rel="shortcut icon" href="favicon.ico">
-</head>
-<body>
-
-	<!-- Header-->
-	<header>
-		<!-- Header container -->
-		<div class="container p-0">
-			<!-- Navbar -->
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<a class="navbar-brand" href="#" title="Turn On a Binary Lamp!">
-					<img src="light_bulb.png" width="32" height="32" alt="">
-					BinLamps
-				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item"><a class="nav-link" href="#">Binary</a>
-						</li>
-						<li class="nav-item"><a class="nav-link active" href="#">Decimal</a>
-						</li>
-						<li class="nav-item"><a class="nav-link" href="#">Hexadecimal</a>
-						</li>
-						<li class="nav-item"><a class="nav-link disabled" href="#"></a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-		<!-- Header container -->
-	</header>
-	<!-- Header-->
-
-
-	<div class="container jumbotron mt-2 text-center">
-		<h1>Light Up Your Byte!</h1>
-
-		<ul id="lamps" class="lamps mt-5 mb-5">
-			<li id="lamp7" class="mb-5"><span class="lamp-pos">7</span> <span
-				class="lamp-value">128</span> <span class="lamp-status">0</span></li>
-			<li id="lamp6" class="mb-5"><span class="lamp-pos">6</span> <span
-				class="lamp-value">64</span> <span class="lamp-status">0</span></li>
-			<li id="lamp5" class="mb-5"><span class="lamp-pos">5</span> <span
-				class="lamp-value">32</span><span class="lamp-status">0</span></li>
-			<li id="lamp4" class="mb-5"><span class="lamp-pos">4</span> <span
-				class="lamp-value">16</span><span class="lamp-status">0</span></li>
-			<li id="lamp3" class="mb-5"><span class="lamp-pos">3</span> <span
-				class="lamp-value">8</span><span class="lamp-status">0</span></li>
-			<li id="lamp2" class="mb-5"><span class="lamp-pos">2</span> <span
-				class="lamp-value">4</span><span class="lamp-status">0</span></li>
-			<li id="lamp1" class="mb-5"><span class="lamp-pos">1</span> <span
-				class="lamp-value">2</span><span class="lamp-status">0</span></li>
-			<li id="lamp0" class="mb-5"><span class="lamp-pos">0</span> <span
-				class="lamp-value">1</span><span class="lamp-status">0</span></li>
-		</ul>
-
-		<div class="row justify-content-center">
-
-			<div class="col-md-2">
-				<p class="value-type">Binary</p>
-				<p id="value-bin" class="value">00000000</p>
-
-			</div>
-			<div class="col-md-2">
-				<p class="value-type">
-					<strong>Decimal</strong>
-				</p>
-				<p id="value-dec" class="value">0</p>
-
-			</div>
-			<div class="col-md-2">
-				<p class="value-type">Hexadecimal</p>
-				<p id="value-hex" class="value">00</p>
-
-			</div>
-		</div>
-	</div>
-
-	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script src="binlamps.js"></script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BinLamps</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#2d89ef" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
