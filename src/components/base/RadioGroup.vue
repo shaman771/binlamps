@@ -36,7 +36,7 @@ defineProps({
     type: Array,
     required: true,
     validator(val) {
-      return val.every(item => 'name' in item && 'value' in item && 'label' in item)
+      return val.every(item => 'value' in item && 'label' in item)
     }
   },
 })
@@ -62,12 +62,15 @@ function onChange(evt) {
   background-color: transparent;
   width: 0;
   height: 0;
+  transition: color 0.3s;
 }
 .radio-group__label {
   color: var(--vt-c-text-light-2);
+  cursor: pointer;
 }
 
 .radio-group__native-input:checked + .radio-group__label {
   color: var(--binlamps-active);
+  text-shadow: 0 0 1px #49a81f;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="app-header">
     <h1 title="Turn On a Binary Lamp!">
       <img
         src="@/assets/light-bulb.png"
@@ -18,19 +18,21 @@
     </button>
 
     <RadioGroup
-      v-model.number="wordSize"
+      :model-value="store.wordSize"
       name="wordSize"
       :items="wordSizeOptions"
       title="Byte word size"
+      @update:model-value="store.setWordSize"
     >
       <IconSize />
     </RadioGroup>
 
     <RadioGroup
-      v-model="digitFormat"
+      :model-value="store.digitFormat"
       name="digitFormat"
       :items="digitFormatOptions"
       title="Light bulb numeric label format"
+      @update:model-value="store.setDigitFormat"
     >
       <IconNumeric />
     </RadioGroup>
@@ -61,9 +63,10 @@ import BaseModal from './base/BaseModal';
 import AboutContent from './AboutContent';
 import IconNumeric from './icons/IconNumeric';
 import IconSize from './icons/IconSize';
+import { useStore } from '../stores/store';
 
-const wordSize = ref(8);
-const digitFormat = ref('dec');
+const store = useStore();
+
 const wordSizeOptions = [
   { value: 8, label: '8 bit' },
   { value: 16, label: '16 bit' },
@@ -77,4 +80,13 @@ const digitFormatOptions = [
 const showAbout = ref(false);
 </script>
 
-<style scoped></style>
+<style scoped>
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-background-soft);
+  padding: 0.5em 1em;
+}
+
+</style>

@@ -12,14 +12,13 @@ import TheFooter from '../components/TheFooter';
 import MainView from '../views/MainView';
 </script>
 
-<style scoped>
-/*#app {*/
-/*  max-width: 1280px;*/
-/*  margin: 0 auto;*/
-/*  padding: 2rem;*/
-
-/*  font-weight: normal;*/
-/*}*/
+<style>
+#app {
+  max-width: 80rem;
+  margin: 0 auto;
+  /*padding: 2rem;*/
+  font-weight: normal;
+}
 
 /*header {*/
 /*  line-height: 1.5;*/
