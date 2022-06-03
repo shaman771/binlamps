@@ -1,14 +1,20 @@
 import { defineStore } from 'pinia';
 
+const persistedState = {
+  theme: sessionStorage.getItem('binlamps-theme'),
+  wordSize: Number.parseInt(sessionStorage.getItem('binlamps-wordsize')),
+  resultBase: sessionStorage.getItem('binlamps-resultbase'),
+}
+
 export const useStore = defineStore({
   id: 'store',
   state: () => ({
     /** @type {'light' | 'dark'} */
-    theme: 'light',
+    theme: persistedState.theme || 'light',
     /** @type { number } */
-    wordSize: 8,
+    wordSize: persistedState.wordSize || 8,
     /** @type {'dec' | 'bin' | 'hex'} */
-    digitFormat: 'dec'
+    resultBase: persistedState.resultBase || 'dec'
   }),
   getters: {
     // doubleCount: (state) => state.counter * 2,
@@ -16,13 +22,15 @@ export const useStore = defineStore({
   actions: {
     toggleTheme() {
       this.theme = this.theme === 'light' ? 'dark' : 'light';
-      document.documentElement.classList.toggle('dark');
+      sessionStorage.setItem('binlamps-theme', this.theme);
     },
     setWordSize(size) {
       this.wordSize = Number.parseInt(size);
+      sessionStorage.setItem('binlamps-wordsize', this.wordSize);
     },
-    setDigitFormat(format) {
-      this.digitFormat = format;
+    setResultBase(format) {
+      this.resultBase = format;
+      sessionStorage.setItem('binlamps-resultbase', this.resultBase);
     }
   },
 });

@@ -65,7 +65,7 @@ function onChange(evt) {
   transition: color 0.3s;
 }
 .radio-group__label {
-  color: var(--vt-c-text-light-2);
+  color: var(--color-text);
   cursor: pointer;
 }
 

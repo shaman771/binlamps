@@ -28,11 +28,11 @@
     </RadioGroup>
 
     <RadioGroup
-      :model-value="store.digitFormat"
-      name="digitFormat"
-      :items="digitFormatOptions"
+      :model-value="store.resultBase"
+      name="resultBase"
+      :items="resultBaseOptions"
       title="Light bulb numeric label format"
-      @update:model-value="store.setDigitFormat"
+      @update:model-value="store.setResultBase"
     >
       <IconNumeric />
     </RadioGroup>
@@ -58,7 +58,7 @@
 <script setup>
 import ThemeSwitch from './base/ThemeSwitch';
 import RadioGroup from './base/RadioGroup';
-import { ref } from 'vue';
+import { ref, watchEffect } from 'vue';
 import BaseModal from './base/BaseModal';
 import AboutContent from './AboutContent';
 import IconNumeric from './icons/IconNumeric';
@@ -67,12 +67,17 @@ import { useStore } from '../stores/store';
 
 const store = useStore();
 
+watchEffect(() => {
+  const action = store.$state.theme === 'light' ? 'add' : 'remove';
+  document.documentElement.classList[action]('dark');
+});
+
 const wordSizeOptions = [
   { value: 8, label: '8 bit' },
   { value: 16, label: '16 bit' },
   { value: 24, label: '24 bit' },
 ];
-const digitFormatOptions = [
+const resultBaseOptions = [
   { value: 'dec', label: 'decimal' },
   { value: 'bin', label: 'binary' },
   { value: 'hex', label: 'hexadecimal' },
@@ -88,5 +93,4 @@ const showAbout = ref(false);
   background-color: var(--color-background-soft);
   padding: 0.5em 1em;
 }
-
 </style>

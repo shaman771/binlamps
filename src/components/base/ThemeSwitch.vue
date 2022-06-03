@@ -26,7 +26,7 @@ const store = useStore();
     display: block;
     width: 2.5rem;
     height: 1.25rem;
-    border: 1px solid var(--vt-c-divider-light-1);
+    border: 1px solid var(--color-border);
     background-color: var(--color-background-mute);
     transition: border-color .25s,background-color .25s;
     text-align: initial;
