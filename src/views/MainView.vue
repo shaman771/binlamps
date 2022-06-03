@@ -1,10 +1,10 @@
 <template>
-  <h1>Light Up Your Byte!</h1>
-  <BulbBoard />
+  <h1>Light Up Your Bytes!</h1>
+  <LightBoard />
 </template>
 
 <script setup>
-import BulbBoard from '../components/LightBoard';
+import LightBoard from '../components/feature/LightBoard';
 </script>
 
 

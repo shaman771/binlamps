@@ -56,14 +56,14 @@
 </template>
 
 <script setup>
-import ThemeSwitch from './base/ThemeSwitch';
-import RadioGroup from './base/RadioGroup';
+import ThemeSwitch from '../base/ThemeSwitch';
+import RadioGroup from '../base/RadioGroup';
 import { ref, watchEffect } from 'vue';
-import BaseModal from './base/BaseModal';
-import AboutContent from './AboutContent';
-import IconNumeric from './icons/IconNumeric';
-import IconSize from './icons/IconSize';
-import { useStore } from '../stores/store';
+import BaseModal from '../base/BaseModal';
+import AboutContent from '../feature/AboutContent';
+import IconNumeric from '../icons/IconNumeric';
+import IconSize from '../icons/IconSize';
+import { useStore } from '../../stores/store';
 
 const store = useStore();
 
@@ -72,15 +72,21 @@ watchEffect(() => {
   document.documentElement.classList[action]('dark');
 });
 
+watchEffect(() => {
+  if (store.$state.lighted >= store.maxNumber) {
+    store.setLighted(store.maxNumber - 1);
+  }
+});
+
 const wordSizeOptions = [
   { value: 8, label: '8 bit' },
   { value: 16, label: '16 bit' },
   { value: 24, label: '24 bit' },
 ];
 const resultBaseOptions = [
-  { value: 'dec', label: 'decimal' },
-  { value: 'bin', label: 'binary' },
-  { value: 'hex', label: 'hexadecimal' },
+  { value: 10, label: 'decimal' },
+  { value: 2, label: 'binary' },
+  { value: 16, label: 'hexadecimal' },
 ];
 const showAbout = ref(false);
 </script>

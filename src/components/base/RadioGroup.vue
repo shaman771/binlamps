@@ -70,7 +70,7 @@ function onChange(evt) {
 }
 
 .radio-group__native-input:checked + .radio-group__label {
-  color: var(--binlamps-active);
+  color: var(--color-primary);
   text-shadow: 0 0 1px #49a81f;
 }
 </style>

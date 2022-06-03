@@ -9,7 +9,10 @@
   --binlamps-black-mute: #282828;
 
   --binlamps-indigo: #2c3e50;
+
   --binlamps-green: #318e08;
+  --binlamps-green-soft: #4aa621;
+  --binlamps-green-mute: #609a46;
 
   --binlamps-divider-light-1: rgba(60, 60, 60, 0.29);
   --binlamps-divider-light-2: rgba(60, 60, 60, 0.12);
@@ -33,6 +36,8 @@
 
   --color-heading: var(--binlamps-text-light-1);
   --color-text: var(--binlamps-text-light-1);
+  --color-primary: var(--binlamps-green);
+  --color-primary-soft: var(--binlamps-green-soft);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,6 +51,8 @@
 
     --color-heading: var(--binlamps-text-dark-1);
     --color-text: var(--binlamps-text-dark-2);
+    --color-primary: var(--binlamps-green-soft);
+    --color-primary-soft: var(--binlamps-green-mute);
   }
 }
 
@@ -93,7 +100,16 @@ body {
   background-color: transparent;
 }
 
+a:link {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: 0.4s;
+}
+
 @media (hover: hover) {
+  a:hover {
+    color: var(--color-primary-soft);
+  }
   .button:hover {
     border-color: var(--color-border-hover);
     /*background-color: var(--color-background-soft);*/

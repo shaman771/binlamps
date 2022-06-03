@@ -7,8 +7,8 @@
 </template>
 
 <script setup>
-import TheHeader from '../components/TheHeader';
-import TheFooter from '../components/TheFooter';
+import TheHeader from '../components/layout/TheHeader';
+import TheFooter from '../components/layout/TheFooter';
 import MainView from '../views/MainView';
 </script>
 
