@@ -7,7 +7,7 @@
         height="32"
         alt=""
       >
-      BinLamps
+      <span class="cap">B</span>in<span class="cap">L</span>amps
     </h1>
 
     <button
@@ -98,5 +98,16 @@ const showAbout = ref(false);
   align-items: center;
   background-color: var(--color-background-soft);
   padding: 0.5em 1em;
+}
+
+.app-header h1 {
+  font-family: Timebomb, monospace;
+  color: var(--color-primary-soft);
+}
+
+.app-header h1 > .cap {
+  font-size: 1.25em;
+  margin-left: 0.125em;
+  color: var(--color-primary);
 }
 </style>
