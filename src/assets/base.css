@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Timebomb';
+  src:  url(./fonts/TickingTimebombBB_ital.woff2) format('woff2'),
+        url(./fonts/TickingTimebombBB_ital.woff) format('woff'),
+        url(./fonts/TickingTimebombBB_ital.ttf) format('truetype');
+}
+
 /* color palette */
 :root {
   --binlamps-white: #ffffff;
@@ -12,7 +19,7 @@
 
   --binlamps-green: #318e08;
   --binlamps-green-soft: #4aa621;
-  --binlamps-green-mute: #609a46;
+  --binlamps-green-mute: #899d76;
 
   --binlamps-divider-light-1: rgba(60, 60, 60, 0.29);
   --binlamps-divider-light-2: rgba(60, 60, 60, 0.12);

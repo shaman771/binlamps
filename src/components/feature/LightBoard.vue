@@ -1,11 +1,13 @@
 <template>
   <section class="light-board">
-    <LightBulb
-      v-for="bit in store.bitRange"
-      :key="bit.id"
-      :bit="bit"
-      @click="store.toggleLighted(bit.weight)"
-    />
+    <div class="light-board__ramp">
+      <LightBulb
+        v-for="bit in store.bitRange"
+        :key="bit.id"
+        :bit="bit"
+        @click="store.toggleLighted(bit.weight)"
+      />
+    </div>
     <LightBoardConsole />
   </section>
 </template>
@@ -19,14 +21,8 @@ const store = useStore();
 </script>
 
 <style scoped>
-.light-board {
+.light-board__ramp {
   display: flex;
   flex-wrap: wrap;
-}
-
-.light-board > * {
-  background-color: var(--color-primary-soft);
-  padding: 1em;
-  border: 1px solid var(--color-border);
 }
 </style>
