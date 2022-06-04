@@ -69,10 +69,13 @@ watchEffect(() => {
 .light-board__ramp {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .light-board__ramp-item {
   opacity: 0;
   transition: opacity 0.2s;
+  flex: 0 1 8em;
+  margin: 1em;
 }
 .light-board__ramp-item.is-visible {
   opacity: 1;

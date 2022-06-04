@@ -1,11 +1,13 @@
 <template>
-  <span>Bulb {{ bit.label }}: {{ bit.isOn }}
-    <IconSun class="animated-shadow" />
-  </span>
+  <div>
+    <span>{{ `# ${bit.index}` }}</span>
+    <IconLightBulb :class="{ activated: bit.isOn }" />
+    <span>{{ bit.weight }}</span>
+  </div>
 </template>
 
 <script setup>
-import IconSun from '../icons/IconSun';
+import IconLightBulb from '../icons/IconLightBulb';
 
 defineProps({
   bit: {

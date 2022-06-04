@@ -30,6 +30,7 @@ export const useStore = defineStore({
             id: `bit-${bitWeight}`,
             label: String(bitWeight),
             weight: bitWeight,
+            index: idx,
             isOn: !!(state.lighted & bitWeight),
           };
         })
