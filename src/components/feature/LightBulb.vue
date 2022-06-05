@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div :class="{ activated: bit.isOn }">
     <span>{{ `# ${bit.index}` }}</span>
-    <IconLightBulb :class="{ activated: bit.isOn }" />
+    <IconLightBulb />
     <span>{{ bit.weight }}</span>
   </div>
 </template>
@@ -22,6 +22,11 @@ defineProps({
 <style scoped>
 .animated-shadow {
   animation: svg-shadow 2s ease-in-out infinite alternate;
+}
+
+.activated > span {
+  color: var(--color-primary);
+  font-weight: bold;
 }
 
 @keyframes svg-shadow {
