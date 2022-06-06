@@ -77,6 +77,10 @@ watchEffect(() => {
   flex: 0 1 7em;
   margin: 1em;
   cursor: pointer;
+  border-radius: 10px;
+  background-color: rgb(135, 135, 105, 0.15);
+  padding: 0.5em;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 .light-board__ramp-item.is-visible {
   opacity: 1;
