@@ -74,7 +74,7 @@ watchEffect(() => {
 .light-board__ramp-item {
   opacity: 0;
   transition: opacity 0.2s;
-  flex: 0 1 5em;
+  flex: 0 1 7em;
   margin: 1em;
   cursor: pointer;
 }
