@@ -215,11 +215,11 @@
         gradientUnits="userSpaceOnUse"
       >
         <stop
-          stop-color="#b0c9e0"
+          stop-color="var(--x-1)"
           offset="0"
         />
         <stop
-          stop-color="#b0c9e0"
+          stop-color="var(--x-1)"
           stop-opacity="0"
           offset="1"
         />
@@ -233,16 +233,16 @@
         gradientUnits="userSpaceOnUse"
       >
         <stop
-          stop-color="#fff"
+          stop-color="var(--w-1)"
           offset="0"
         />
         <stop
-          stop-color="#fff"
+          stop-color="var(--w-1)"
           stop-opacity=".49804"
           offset=".30486"
         />
         <stop
-          stop-color="#fff"
+          stop-color="var(--w-1)"
           stop-opacity="0"
           offset="1"
         />
@@ -257,53 +257,53 @@
       >
         <stop offset="0" />
         <stop
-          stop-color="#222423"
+          stop-color="var(--l-1)"
           offset=".13511"
         />
         <stop
-          stop-color="#4c4e4d"
+          stop-color="var(--l-2)"
           offset=".22977"
         />
         <stop
-          stop-color="#333534"
+          stop-color="var(--l-3)"
           offset=".33936"
         />
         <stop
-          stop-color="#181a19"
+          stop-color="var(--l-4)"
           offset=".42978"
         />
         <stop
-          stop-color="#6e6e6e"
+          stop-color="var(--l-5)"
           stop-opacity=".47843"
           offset=".51595"
         />
         <stop
-          stop-color="#6e6e6e"
+          stop-color="var(--l-5)"
           stop-opacity=".41176"
           offset=".58298"
         />
         <stop
-          stop-color="#6e6e6e"
+          stop-color="var(--l-5)"
           stop-opacity=".32549"
           offset=".667"
         />
         <stop
-          stop-color="#6e6e6e"
+          stop-color="var(--l-5)"
           stop-opacity=".24314"
           offset=".74786"
         />
         <stop
-          stop-color="#6e6e6e"
+          stop-color="var(--l-5)"
           stop-opacity=".1451"
           offset=".84893"
         />
         <stop
-          stop-color="#6e6e6e"
+          stop-color="var(--l-5)"
           stop-opacity=".07843"
           offset=".917"
         />
         <stop
-          stop-color="#6e6e6e"
+          stop-color="var(--l-5)"
           stop-opacity="0"
           offset="1"
         />
@@ -378,23 +378,23 @@
         gradientUnits="userSpaceOnUse"
       >
         <stop
-          stop-color="#6b6b6b"
+          stop-color="var(--b-1)"
           offset="0"
         />
         <stop
-          stop-color="#393b3a"
+          stop-color="var(--b-2)"
           offset=".70077"
         />
         <stop
-          stop-color="#a4a4a2"
+          stop-color="var(--b-3)"
           offset=".84687"
         />
         <stop
-          stop-color="#fff"
+          stop-color="var(--b-4)"
           offset=".97479"
         />
         <stop
-          stop-color="#797a78"
+          stop-color="var(--b-5)"
           offset="1"
         />
       </radialGradient>
@@ -638,77 +638,126 @@
   </svg>
 </template>
 <script setup>
-const id = Math.floor(Math.random() * 1000000);
+  const id = Math.floor(Math.random() * 1000000);
 </script>
 <style>
 .light-bulb {
-  /* socket bottom cone */
-  --q-1: #6b6b6b;
-  --q-2: #b8b8b6;
-  --q-3: #a4a4a2;
-  --q-4: #525453;
-  --q-5: #363837;
+  /* grey shades */
+  --grey-0: #181a19;
+  --grey-1: #222423;
+  --grey-3: #333534;
+  --grey-4: #363837;
+  --grey-5: #393b3a;
+  --grey-6: #4c4e4d;
+  --grey-7: #525453;
+  --grey-8: #6b6b6b;
+  --grey-9: #6e6e6e;
+  --grey-10: #797a78;
+  --grey-11: #a4a4a2;
+  --grey-12: #a9abaa;
+  --grey-13: #b8b8b6;
+  --grey-14: #dededc;
+  --grey-15: #f1f1ef;
+  --grey-16: #f3f3f1;
 
-  --p-1: #6b6b6b;
-  --p-2: #6e6e6e;
-  --p-3: #f3f3f1;
-  --p-4: #f1f1ef;
-  --p-5: #dededc;
-  --p-6: #a9abaa;
-  --p-7: #b8b8b6;
-  --p-8: #b8b8b6;
-  --p-9: #a4a4a2;
-  --p-10: #525453;
-  --p-11: #363837;
+  /* blue shades */
+  --blue-0: #557284;
+  --blue-1: #617d90;
+  --blue-2: #718a9e;
+  --blue-3: #7d96aa;
+  --blue-4: #91aabe;
+  --blue-5: #92a8b6;
+  --blue-6: #b0c9e0;
+  --blue-7: #c1d5dc;
+  --blue-8: #c3d0d6;
+
+  /* yellow shades */
+  --yellow-0: #847b55;
+  --yellow-2: #908761;
+  --yellow-3: #9e9671;
+  --yellow-4: #aaa67d;
+  --yellow-5: #b6b192;
+  --yellow-6: #beb791;
+  --yellow-7: #e0d7b0;
+  --yellow-8: #dcdbc1;
+  --yellow-9: #d6d4c3;
+}
+
+.light-bulb {
+  /* socket bottom cone */
+  --q-1: var(--grey-8);
+  --q-2: var(--grey-13);
+  --q-3: var(--grey-11);
+  --q-4: var(--grey-7);
+  --q-5: var(--grey-4);
+
+  --p-1: var(--grey-8);
+  --p-2: var(--grey-9);
+  --p-3: var(--grey-16);
+  --p-4: var(--grey-15);
+  --p-5: var(--grey-14);
+  --p-6: var(--grey-12);
+  --p-7: var(--grey-13);
+  --p-8: var(--grey-13);
+  --p-9: var(--grey-11);
+  --p-10: var(--grey-7);
+  --p-11: var(--grey-4);
 
   /* socket screw */
-  --g-1: #6b6b6b;
-  --g-2: #fff;
-  --g-3: #a4a4a2;
-  --g-4: #525453;
-  --g-5: #363837;
+  --g-1: var(--grey-8);
+  --g-2: var(--binlamps-white);
+  --g-3: var(--grey-11);
+  --g-4: var(--grey-7);
+  --g-5: var(--grey-4);
+
+  --b-1: var(--grey-8);
+  --b-2: var(--grey-5);
+  --b-3: var(--grey-11);
+  --b-4: var(--binlamps-white);
+  --b-5: var(--grey-10);
+
+  /* bottom terminal */
+  --l-1: var(--grey-1);
+  --l-2: var(--grey-6);
+  --l-3: var(--grey-3);
+  --l-4: var(--grey-0);
+  --l-5: var(--grey-9);
 
   /* glass center stand */
-  --r-1: #92a8b6;
-  --r-2: #718a9e;
-  --r-3: #7d96aa;
-  --r-4: #c3d0d6;
-  --r-5: #c1d5dc;
-  --r-6: #557284;
-  --r-7: #617d90;
+  --r-1: var(--blue-5);
+  --r-2: var(--blue-2);
+  --r-3: var(--blue-3);
+  --r-4: var(--blue-8);
+  --r-5: var(--blue-7);
+  --r-6: var(--blue-0);
+  --r-7: var(--blue-1);
 
-  --s-1: #92a8b6;
-  --s-2: #718a9e;
-  --s-3: #7d96aa;
-  --s-4: #c3d0d6;
-  --s-5: #c1d5dc;
-  --s-6: #557284;
-  --s-7: #91aabe;
+  --s-1: var(--blue-5);
+  --s-2: var(--blue-2);
+  --s-3: var(--blue-3);
+  --s-4: var(--blue-8);
+  --s-5: var(--blue-7);
+  --s-6: var(--blue-0);
+  --s-7: var(--blue-4);
 
-  /* TODO Continue transferring colors to vars */
+  /* bulb */
+  --x-1: var(--blue-6);
+
+  /* bulb glare */
+  --w-1: var(--binlamps-white);
 }
 
 .activated .light-bulb {
   /* TODO To be replaced, POC only */
-  --q-1: #6b6b6b;
-  --q-2: #b8b8b6;
-  --q-3: #33671e;
-  --q-4: #899d76;
-  --q-5: #172e23;
+
 }
 
 .dark .activated .light-bulb {
   /* TODO To be replaced, POC only */
-  --q-1: #6b6b6b;
-  --q-2: #b8b8b6;
-  --q-3: #671e4b;
-  --q-4: #9d769c;
-  --q-5: #2e171c;
+
 }
 
 .light-bulb * {
   transition: all 1s;
 }
-
-/* Gradients */
 </style>
