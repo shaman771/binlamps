@@ -7,5 +7,5 @@ import DefaultLayout from './layouts/DefaultLayout.vue';
 </script>
 
 <style>
-@import '@/assets/base.css';
+@import '@/assets/styles/base.css';
 </style>

@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Timebomb';
-  src:  url(./fonts/TickingTimebombBB_ital.woff2) format('woff2'),
-        url(./fonts/TickingTimebombBB_ital.woff) format('woff'),
-        url(./fonts/TickingTimebombBB_ital.ttf) format('truetype');
+  src:  url(../fonts/TickingTimebombBB_ital.woff2) format('woff2'),
+        url(../fonts/TickingTimebombBB_ital.woff) format('woff'),
+        url(../fonts/TickingTimebombBB_ital.ttf) format('truetype');
 }
 
 /* color palette */

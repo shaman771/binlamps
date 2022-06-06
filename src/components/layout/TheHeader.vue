@@ -2,7 +2,7 @@
   <header class="app-header">
     <h1 title="Turn On a Binary Lamp!">
       <img
-        src="@/assets/light-bulb.png"
+        src="@/assets/images/light-bulb.png"
         width="32"
         height="32"
         alt=""

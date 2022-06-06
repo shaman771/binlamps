@@ -1,9 +1,12 @@
 <template>
   <footer class="app-footer">
-    BinLamps visual toy
+    <address>
+      <span class="app-footer__brand">BinLamps</span> visual toy
+    </address>
+    <span>Helps you with binary numbers</span>
     <span>
       <img
-        src="@/assets/logo.svg"
+        src="@/assets/images/logo.svg"
         alt="Vue logo"
         width="24"
         height="24"
@@ -25,11 +28,16 @@
 
 <style scoped>
 .app-footer {
+  font-size: 0.875rem;
   display: flex;
   background-color: var(--color-background-soft);
   justify-content: space-between;
   align-items: center;
-  padding: 2em 1em;
+  padding: 2em 4em;
 }
 
+.app-footer__brand {
+  font-family: Timebomb, monospace;
+  font-size: 1.25em;
+}
 </style>
