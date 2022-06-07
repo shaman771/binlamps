@@ -22,7 +22,6 @@ defineProps({
 <style scoped>
 .activated > span {
   color: var(--color-primary);
-  font-weight: bold;
 }
 span:last-child {
   font-size: 1.5em;

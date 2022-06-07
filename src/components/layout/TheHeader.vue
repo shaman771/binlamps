@@ -1,57 +1,54 @@
 <template>
   <header class="app-header">
-    <h1 title="Turn On a Binary Lamp!">
-      <img
-        src="@/assets/images/light-bulb.png"
-        width="32"
-        height="32"
-        alt=""
+    <div class="app-container">
+      <h1 title="Turn On a Binary Lamp!">
+        <IconLightBulbSimple class="app-header__brand-icon" />
+        <span class="cap">B</span>in<span class="cap">L</span>amps
+      </h1>
+
+      <button
+        class="button button-text"
+        @click="showAbout = true"
       >
-      <span class="cap">B</span>in<span class="cap">L</span>amps
-    </h1>
+        About
+      </button>
 
-    <button
-      class="button button-text"
-      @click="showAbout = true"
-    >
-      About
-    </button>
-
-    <RadioGroup
-      :model-value="store.wordSize"
-      name="wordSize"
-      :items="wordSizeOptions"
-      title="Byte word size"
-      @update:model-value="store.setWordSize"
-    >
-      <IconSize />
-    </RadioGroup>
-
-    <RadioGroup
-      :model-value="store.resultBase"
-      name="resultBase"
-      :items="resultBaseOptions"
-      title="Light bulb numeric label format"
-      @update:model-value="store.setResultBase"
-    >
-      <IconNumeric />
-    </RadioGroup>
-
-    <ThemeSwitch />
-
-    <Teleport to="body">
-      <BaseModal
-        :is-shown="showAbout"
-        @close="showAbout = false"
+      <RadioGroup
+        :model-value="store.wordSize"
+        name="wordSize"
+        :items="wordSizeOptions"
+        title="Byte word size"
+        @update:model-value="store.setWordSize"
       >
-        <template #header>
-          <h3>About BinLamps</h3>
-        </template>
-        <template #body>
-          <AboutContent />
-        </template>
-      </BaseModal>
-    </Teleport>
+        <IconSize />
+      </RadioGroup>
+
+      <RadioGroup
+        :model-value="store.resultBase"
+        name="resultBase"
+        :items="resultBaseOptions"
+        title="Light bulb numeric label format"
+        @update:model-value="store.setResultBase"
+      >
+        <IconNumeric />
+      </RadioGroup>
+
+      <ThemeSwitch />
+
+      <Teleport to="body">
+        <BaseModal
+          :is-shown="showAbout"
+          @close="showAbout = false"
+        >
+          <template #header>
+            <h3>About BinLamps</h3>
+          </template>
+          <template #body>
+            <AboutContent />
+          </template>
+        </BaseModal>
+      </Teleport>
+    </div>
   </header>
 </template>
 
@@ -64,6 +61,7 @@ import AboutContent from '../feature/AboutContent';
 import IconNumeric from '../icons/IconNumeric';
 import IconSize from '../icons/IconSize';
 import { useStore } from '../../stores/store';
+import IconLightBulbSimple from '../icons/IconLightBulbSimple';
 
 const store = useStore();
 
@@ -93,11 +91,10 @@ const showAbout = ref(false);
 
 <style scoped>
 .app-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  box-shadow: 0 4px 4px var(--color-border);
   background-color: var(--color-background-soft);
-  padding: 0.5em 1em;
+  display: flex;
+  justify-content: center;
 }
 
 .app-header h1 {
@@ -109,5 +106,9 @@ const showAbout = ref(false);
   font-size: 1.25em;
   margin-left: 0.125em;
   color: var(--color-primary);
+}
+
+.app-header__brand-icon {
+  width: 2.5rem;
 }
 </style>
