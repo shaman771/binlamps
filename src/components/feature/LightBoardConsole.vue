@@ -49,6 +49,8 @@ function handleInput(evt) {
 .light-board-console {
   display: flex;
   justify-content: center;
+  max-width: var(--spacing-max-width);
+  margin: 0 auto;
 }
 
 .light-board-console > * {
@@ -72,17 +74,18 @@ function handleInput(evt) {
   font-size: 4rem;
   border-radius: 0.125em;
   border: 4px ridge var(--color-border);
-  color: var(--color-text);
+  color: var(--color-led-text);
   outline: 2px groove var(--color-border);
-  /* TODO: convert to themed vars */
-  background: rgb(63,94,0);
-  background: linear-gradient(0deg, rgba(63,94,0,1) 0%, rgba(99,121,9,1) 3%, rgba(144,163,134,1) 50%, rgba(99,121,9,1) 90%, rgba(63,94,0,1) 100%);
   transition: outline 0.15s;
+  background: var(--color-led-gradient);
+  background: var(--color-led-background);
+  text-shadow: 2px 2px 1px #70875b;
+  width: 100%;
 }
 
 .light-board-console__display input:focus {
-  outline: 3px groove var(--binlamps-green-mute);
-  box-shadow: 0 0 4px var(--color-background-mute);
+  outline: 1px groove var(--color-primary-mute);
+  /*box-shadow: 0 0 4px var(--color-background-mute);*/
 }
 
 .light-board-console__reset {

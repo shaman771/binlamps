@@ -651,6 +651,8 @@ const id = Math.floor(Math.random() * 1000000);
 </script>
 <style>
 .light-bulb {
+  --white-0: #fff;
+
   /* grey shades */
   --grey-0: #181a19;
   --grey-0a: #212322;
@@ -720,7 +722,7 @@ const id = Math.floor(Math.random() * 1000000);
 
   /* socket screw */
   --g-1: var(--grey-8);
-  --g-2: var(--binlamps-white);
+  --g-2: var(--white-0);
   --g-3: var(--grey-11);
   --g-4: var(--grey-7);
   --g-5: var(--grey-4);
@@ -728,7 +730,7 @@ const id = Math.floor(Math.random() * 1000000);
   --b-1: var(--grey-8);
   --b-2: var(--grey-5);
   --b-3: var(--grey-11);
-  --b-4: var(--binlamps-white);
+  --b-4: var(--white-0);
   --b-5: var(--grey-10);
 
   /* bottom terminal */
@@ -759,7 +761,7 @@ const id = Math.floor(Math.random() * 1000000);
   --bulb-1: var(--blue-6);
 
   /* bulb glare */
-  --glare-1: var(--binlamps-white);
+  --glare-1: var(--white-0);
 
   /* static fills */
   --fill-0: var(--blue-0c);

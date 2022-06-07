@@ -91,10 +91,15 @@ const showAbout = ref(false);
 
 <style scoped>
 .app-header {
-  box-shadow: 0 4px 4px var(--color-border);
-  background-color: var(--color-background-soft);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(180deg, var(--color-background) 0%, var(--color-background-mute) 100%);
   display: flex;
   justify-content: center;
+  z-index: 1;
+}
+
+.dark .app-header {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .app-header h1 {

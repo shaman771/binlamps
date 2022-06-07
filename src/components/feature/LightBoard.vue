@@ -4,6 +4,7 @@
     <h2 class="light-board__heading">
       Light Up Your Bytes!
     </h2>
+    <LightBoardConsole />
     <div class="light-board__ramp">
       <LightBulb
         v-for="bit in store.bitRange"
@@ -14,7 +15,6 @@
         @click="store.toggleLighted(bit.weight)"
       />
     </div>
-    <LightBoardConsole />
   </section>
 </template>
 
@@ -56,10 +56,15 @@ watchEffect(() => {
   overflow: hidden;
 }
 
+.light-board > * {
+  margin-bottom: 1.5rem;
+}
+
 .light-board__heading {
-  margin: 3vw auto;
-  font-size: 2rem;
+  margin: 3vw auto 2vw;
+  font-size: 2.5rem;
   letter-spacing: 0.125rem;
+  color: var(--color-heading);
 }
 
 .light-board__backdrop {
@@ -75,6 +80,8 @@ watchEffect(() => {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: var(--spacing-max-width);
+  margin: 0 auto;
 }
 
 .light-board__ramp-item {
@@ -86,13 +93,13 @@ watchEffect(() => {
   border-radius: 10px;
   background-color: rgb(253, 253, 253, 0.6);
   padding: 0.5em;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-1);
 }
 
 .dark .light-board__ramp-item {
-  background-color: rgba(24, 24, 24, 0.75);
+  background-color: rgba(24, 24, 24, 0.8);
   box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.25),
-    0 0 10px rgba(0, 0, 0, 0.4);
+  var(--shadow-1);
 }
 
 .light-board__ramp-item.is-visible {
