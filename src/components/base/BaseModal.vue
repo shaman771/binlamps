@@ -11,9 +11,7 @@
         class="modal-mask"
         @click="emit('close')"
       />
-      <div
-        class="modal-container"
-      >
+      <div class="modal-container">
         <div class="modal-header">
           <slot name="header" />
         </div>
@@ -32,17 +30,15 @@
 
 <script setup>
 defineProps({
-  isShown: Boolean
-})
+  isShown: Boolean,
+});
 
 const emit = defineEmits(['close']);
 </script>
 
-
-
-
 <style>
-.modal-wrapper, .modal-mask {
+.modal-wrapper,
+.modal-mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -63,32 +59,33 @@ const emit = defineEmits(['close']);
 }
 
 .modal-container {
-  width: 300px;
-  margin: 0px auto;
-  padding: 20px 30px;
+  width: 40rem;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
   background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  border-radius: 0.25rem;
+  box-shadow: var(--shadow-1);
   transition: all 0.3s ease;
 }
 
 .modal-header h3 {
   margin-top: 0;
-  color: #42b983;
+  color: var(--color-primary-soft);
 }
 
 .modal-body {
-  margin: 20px 0;
+  margin: 1.25em 0;
 }
 
-.modal-enter-from, .modal-leave-to {
-  transition: all 0.3s;
+.modal-enter-active,
+.modal-leave-active {
+  transition: all 0.3s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
   opacity: 0;
   transform: scale(1.1);
 }
-
-.modal-leave-from {
-  /*transition: all 0.3s;*/
-}
-
 </style>
