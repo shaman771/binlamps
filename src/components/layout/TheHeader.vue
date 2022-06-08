@@ -1,10 +1,15 @@
 <template>
   <header class="app-header">
     <div class="app-container">
-      <h1 title="Turn On a Binary Lamp!">
-        <IconLightBulbSimple class="app-header__brand-icon" />
-        <span class="cap">B</span>in<span class="cap">L</span>amps
-      </h1>
+      <div>
+        <h1 title="Turn On a Binary Lamp!">
+          <IconLightBulbSimple class="app-header__brand-icon" />
+          <span class="cap">B</span>in<span class="cap">L</span>amps
+        </h1>
+        <h2 class="app-header__subtitle">
+          Light Up Your Bytes
+        </h2>
+      </div>
 
       <button
         class="button button-text"
@@ -12,26 +17,7 @@
       >
         About
       </button>
-
-      <RadioGroup
-        :model-value="store.wordSize"
-        name="wordSize"
-        :items="wordSizeOptions"
-        title="Byte word size"
-        @update:model-value="store.setWordSize"
-      >
-        <IconSize />
-      </RadioGroup>
-
-      <RadioGroup
-        :model-value="store.resultBase"
-        name="resultBase"
-        :items="resultBaseOptions"
-        title="Light bulb numeric label format"
-        @update:model-value="store.setResultBase"
-      >
-        <IconNumeric />
-      </RadioGroup>
+      <LightBoardConsole />
 
       <ThemeSwitch />
 
@@ -53,13 +39,11 @@
 </template>
 
 <script setup>
+import LightBoardConsole from '../feature/LightBoardConsole';
 import ThemeSwitch from '../base/ThemeSwitch';
-import RadioGroup from '../base/RadioGroup';
 import { ref, watchEffect } from 'vue';
 import BaseModal from '../base/BaseModal';
 import AboutContent from '../feature/AboutContent';
-import IconNumeric from '../icons/IconNumeric';
-import IconSize from '../icons/IconSize';
 import { useStore } from '../../stores/store';
 import IconLightBulbSimple from '../icons/IconLightBulbSimple';
 
@@ -76,26 +60,24 @@ watchEffect(() => {
   }
 });
 
-const wordSizeOptions = [
-  { value: 8, label: '8 bit' },
-  { value: 16, label: '16 bit' },
-  { value: 24, label: '24 bit' },
-];
-const resultBaseOptions = [
-  { value: 10, label: 'decimal' },
-  { value: 2, label: 'binary' },
-  { value: 16, label: 'hexadecimal' },
-];
 const showAbout = ref(false);
 </script>
 
 <style scoped>
 .app-header {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  background: linear-gradient(180deg, var(--color-background) 0%, var(--color-background-mute) 100%);
   display: flex;
   justify-content: center;
+  position: sticky;
+  top: 0;
   z-index: 1;
+  background: linear-gradient(
+    180deg,
+    var(--color-background) 0%,
+    var(--color-background-mute) 100%
+  );
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-out;
+  width: 100%;
 }
 
 .dark .app-header {
@@ -115,5 +97,12 @@ const showAbout = ref(false);
 
 .app-header__brand-icon {
   width: 2.5rem;
+}
+
+.app-header__subtitle {
+  font-size: 0.875em;
+  margin: -1em 0 0 3em;
+  color: var(--color-text-soft);
+  letter-spacing: 0.05rem;
 }
 </style>

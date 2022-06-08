@@ -1,10 +1,6 @@
 <template>
   <section class="light-board">
     <IconCircuitBoard class="light-board__backdrop" />
-    <h2 class="light-board__heading">
-      Light Up Your Bytes!
-    </h2>
-    <LightBoardConsole />
     <div class="light-board__ramp">
       <LightBulb
         v-for="bit in store.bitRange"
@@ -19,7 +15,6 @@
 </template>
 
 <script setup>
-import LightBoardConsole from './LightBoardConsole';
 import LightBulb from './LightBulb';
 import { useStore } from '../../stores/store';
 import { watchEffect, ref } from 'vue';
@@ -58,13 +53,6 @@ watchEffect(() => {
 
 .light-board > * {
   margin-bottom: 1.5rem;
-}
-
-.light-board__heading {
-  margin: 3vw auto 2vw;
-  font-size: 2.5rem;
-  letter-spacing: 0.125rem;
-  color: var(--color-heading);
 }
 
 .light-board__backdrop {

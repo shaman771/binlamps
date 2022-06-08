@@ -1,9 +1,9 @@
 <template>
-  <TheHeader class="app-header" />
+  <TheHeader />
   <main class="app-main">
     <LightBoard />
   </main>
-  <TheFooter class="app-footer" />
+  <TheFooter />
 </template>
 
 <script setup>
@@ -19,7 +19,7 @@ import LightBoard from './components/feature/LightBoard';
   display: grid;
   margin: 0 auto;
   font-weight: normal;
-  grid-template-rows: 10% auto 10%;
+  grid-template-rows: 8% auto 8%;
   grid-template-columns: [start] 1fr [end];
   min-height: 100vh;
 }

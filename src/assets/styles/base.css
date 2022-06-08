@@ -6,58 +6,6 @@
 }
 
 :root {
-  /*--binlamps-white: #ffffff;*/
-  /*--binlamps-white-soft: #f8f8f8;*/
-  /*--binlamps-white-mute: #f2f2f2;*/
-
-  /*--binlamps-black: #181818;*/
-  /*--binlamps-black-soft: #222222;*/
-  /*--binlamps-black-mute: #282828;*/
-
-  /*--binlamps-indigo: #2c3e50;*/
-
-  /*--binlamps-green: #318e08;*/
-  /*--binlamps-green-soft: #4aa621;*/
-  /*--binlamps-green-mute: #899d76;*/
-  /*--binlamps-green-light-1: #d2dfb7;*/
-  /*--binlamps-green-dark-1: #283a28;*/
-
-  /*--binlamps-divider-light-1: rgba(60, 60, 60, 0.29);*/
-  /*--binlamps-divider-light-2: rgba(60, 60, 60, 0.12);*/
-  /*--binlamps-divider-dark-1: rgba(84, 84, 84, 0.65);*/
-  /*--binlamps-divider-dark-2: rgba(84, 84, 84, 0.48);*/
-
-  /*--binlamps-text-light-1: var(--binlamps-indigo);*/
-  /*--binlamps-text-light-2: rgba(60, 60, 60, 0.66);*/
-  /*--binlamps-text-dark-1: var(--binlamps-white);*/
-  /*--binlamps-text-dark-2: rgba(235, 235, 235, 0.64);*/
-
-
-
-  /*--binlamps-gradient-1: linear-gradient(*/
-  /*  0deg,*/
-  /*  rgb(137 157 118) 0%,*/
-  /*  rgba(144, 163, 134, 1) 50%,*/
-  /*  rgb(137 157 118) 90%,*/
-  /*  rgb(201, 213, 191) 100%*/
-  /*);*/
-  /*--binlamps-gradient-1-bg: rgb(137 157 118);*/
-  /*--binlamps-gradient-1-outline: rgb(137 157 118);*/
-  /*--binlamps-gradient-2: linear-gradient(*/
-  /*  0deg,*/
-  /*  rgb(137 157 118) 0%,*/
-  /*  rgba(144, 163, 134, 1) 50%,*/
-  /*  rgb(137 157 118) 90%,*/
-  /*  rgb(137 153 93) 100%*/
-  /*);*/
-  /*--binlamps-gradient-2-bg: rgb(137 157 118);*/
-  /*--binlamps-gradient-2-outline: rgb(137 157 118);*/
-
-  /*--shadow-light: 0 0 10px rgba(0, 0, 0, 0.3);*/
-  /*--shadow-dark: 0 0 10px rgba(0, 0, 0, 0.5);*/
-}
-
-:root {
   --color-background: #ffffff;
   --color-background-soft: #f8f8f8;
   --color-background-mute: #f2f2f2;
@@ -67,6 +15,7 @@
 
   --color-heading: #2c3e50;
   --color-text: #2c3e50;
+  --color-text-soft: #4e5a67;
 
   --color-primary: #318e08;
   --color-primary-soft: #4aa621;
@@ -99,6 +48,7 @@
 
     --color-heading: #bac990;
     --color-text: rgba(235, 235, 235, 0.64);
+    --color-text-soft: rgba(235, 235, 235, 0.5);
 
     --color-primary: #318e08;
     --color-primary-soft: #899d76;
@@ -129,6 +79,7 @@
 
   --color-heading: #bac990;
   --color-text: rgba(235, 235, 235, 0.64);
+  --color-text-soft: rgba(235, 235, 235, 0.5);
 
   --color-primary: #318e08;
   --color-primary-soft: #899d76;
