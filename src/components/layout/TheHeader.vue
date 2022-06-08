@@ -10,30 +10,8 @@
           Light Up Your Bytes
         </h2>
       </div>
-
-      <button
-        class="button button-text"
-        @click="showAbout = true"
-      >
-        About
-      </button>
       <LightBoardConsole />
-
       <ThemeSwitch />
-
-      <Teleport to="body">
-        <BaseModal
-          :is-shown="showAbout"
-          @close="showAbout = false"
-        >
-          <template #header>
-            <h3>About BinLamps</h3>
-          </template>
-          <template #body>
-            <AboutContent />
-          </template>
-        </BaseModal>
-      </Teleport>
     </div>
   </header>
 </template>
@@ -41,9 +19,7 @@
 <script setup>
 import LightBoardConsole from '../feature/LightBoardConsole';
 import ThemeSwitch from '../base/ThemeSwitch';
-import { ref, watchEffect } from 'vue';
-import BaseModal from '../base/BaseModal';
-import AboutContent from '../feature/AboutContent';
+import { watchEffect } from 'vue';
 import { useStore } from '../../stores/store';
 import IconLightBulbSimple from '../icons/IconLightBulbSimple';
 
@@ -59,8 +35,6 @@ watchEffect(() => {
     store.setLighted(store.maxNumber - 1);
   }
 });
-
-const showAbout = ref(false);
 </script>
 
 <style scoped>

@@ -49,6 +49,9 @@ watchEffect(() => {
 .light-board {
   height: 100%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .light-board > * {
@@ -69,7 +72,7 @@ watchEffect(() => {
   flex-wrap: wrap;
   justify-content: center;
   max-width: var(--spacing-max-width);
-  margin: 0 auto;
+  flex: 1;
 }
 
 .light-board__ramp-item {

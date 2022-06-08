@@ -15,7 +15,7 @@
 
   --color-heading: #2c3e50;
   --color-text: #2c3e50;
-  --color-text-soft: #4e5a67;
+  --color-text-soft: #8d978e;
 
   --color-primary: #318e08;
   --color-primary-soft: #4aa621;
@@ -48,7 +48,7 @@
 
     --color-heading: #bac990;
     --color-text: rgba(235, 235, 235, 0.64);
-    --color-text-soft: rgba(235, 235, 235, 0.5);
+    --color-text-soft: #8d978e;
 
     --color-primary: #318e08;
     --color-primary-soft: #899d76;
@@ -79,7 +79,7 @@
 
   --color-heading: #bac990;
   --color-text: rgba(235, 235, 235, 0.64);
-  --color-text-soft: rgba(235, 235, 235, 0.5);
+  --color-text-soft: #8d978e;
 
   --color-primary: #318e08;
   --color-primary-soft: #899d76;
@@ -132,7 +132,7 @@ body {
   background-color: transparent;
 }
 
-a:link {
+a:link, a:visited {
   text-decoration: none;
   color: var(--color-primary);
   transition: 0.4s;
@@ -160,4 +160,13 @@ a:link {
   padding: 0.5em 1em;
   flex: 1;
   max-width: var(--spacing-max-width);
+}
+
+@media screen and (max-width: 48rem) {
+  .app-container {
+    flex-wrap: wrap;
+    /*flex-direction: column;*/
+    align-self: stretch;
+    justify-content: space-evenly;
+  }
 }
