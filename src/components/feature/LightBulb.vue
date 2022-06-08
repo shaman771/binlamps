@@ -2,14 +2,14 @@
   <div :class="{ activated: bit.isOn }">
     <span>{{ `# ${bit.index}` }}</span>
     <IconLightBulb />
-    <span>{{ bit.weight }}</span>
+    <span>{{ prettyWeight }}</span>
   </div>
 </template>
 
 <script setup>
 import IconLightBulb from '../icons/IconLightBulb';
 
-defineProps({
+const props = defineProps({
   bit: {
     type: Object,
     default() {
@@ -17,11 +17,15 @@ defineProps({
     },
   },
 });
+
+const prettyWeight = new Intl.NumberFormat('en-US')
+  .format(props.bit.weight)
+  .replace(/,/g, ' ');
 </script>
 
 <style scoped>
 .activated > span {
-  color: var(--color-primary);
+  color: var(--color-primary-soft);
 }
 span:last-child {
   font-size: 1.5em;
