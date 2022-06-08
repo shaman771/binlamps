@@ -32,7 +32,7 @@ watchEffect(() => {
 
 watchEffect(() => {
   if (store.$state.lighted >= store.maxNumber) {
-    store.setLighted(store.maxNumber - 1);
+    store.setLighted((store.maxNumber - 1).toString(store.$state.resultBase));
   }
 });
 </script>
