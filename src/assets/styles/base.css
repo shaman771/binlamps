@@ -8,7 +8,7 @@
 :root {
   --color-background: #ffffff;
   --color-background-soft: #f8f8f8;
-  --color-background-mute: #f2f2f2;
+  --color-background-mute: #fafafa;
 
   --color-border: rgba(60, 60, 60, 0.12);
   --color-border-hover: rgba(60, 60, 60, 0.29);
@@ -21,27 +21,33 @@
   --color-primary-soft: #4aa621;
   --color-primary-mute: #899d76;
 
-  --color-led-text: #f2f2f2;
+  --color-led-text: #35422c;
+  --color-led-text-shadow: #9ba095;
   --color-led-gradient: linear-gradient(
-      0deg,
-      rgb(137 157 118) 0%,
-      rgba(144, 163, 134, 1) 50%,
-      rgb(137 157 118) 90%,
-      rgb(201, 213, 191) 100%
+    0deg,
+    #a8b59c 0%,
+    #c0ccba 50%,
+    #a8b59c 90%,
+    #9fac95 100%
   );
-  --color-led-background: rgb(137 157 118);
-  --color-led-outline: rgb(137 157 118);
+  --color-led-background: #a8b59c;
+  --color-led-outline-1: #ccdabf;
+  --color-led-outline-2: #abd298;
 
   --spacing-max-width: 80rem;
 
   --shadow-1: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  --font-size: 100%;
+
+  --transition-timing: 0.3s;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: #181818;
     --color-background-soft: #222222;
-    --color-background-mute: #282828;
+    --color-background-mute: #1f1f1f;
 
     --color-border: rgba(84, 84, 84, 0.48);
     --color-border-hover: rgba(84, 84, 84, 0.65);
@@ -55,15 +61,17 @@
     --color-primary-mute: #283a28;
 
     --color-led-text: #282828;
+    --color-led-text-shadow: #70875b;
     --color-led-gradient: linear-gradient(
-        0deg,
-        rgb(137 157 118) 0%,
-        rgba(144, 163, 134, 1) 50%,
-        rgb(137 157 118) 90%,
-        rgb(137 153 93) 100%
+      0deg,
+      #5b6b4c 0%,
+      #90a386 50%,
+      #899d76 90%,
+      #6e7a4c 100%
     );
-    --color-led-background: rgb(137 157 118);
-    --color-led-outline: rgb(137 157 118);
+    --color-led-background: #899d76;
+    --color-led-outline-1: #899d76;
+    --color-led-outline-2: #96c178;
 
     --shadow-1: 0 0 10px rgba(0, 0, 0, 0.5);
   }
@@ -72,7 +80,7 @@
 :root.dark {
   --color-background: #181818;
   --color-background-soft: #222222;
-  --color-background-mute: #282828;
+  --color-background-mute: #1f1f1f;
 
   --color-border: rgba(84, 84, 84, 0.48);
   --color-border-hover: rgba(84, 84, 84, 0.65);
@@ -86,15 +94,17 @@
   --color-primary-mute: #283a28;
 
   --color-led-text: #282828;
+  --color-led-text-shadow: #70875b;
   --color-led-gradient: linear-gradient(
-      0deg,
-      rgb(137 157 118) 0%,
-      rgba(144, 163, 134, 1) 50%,
-      rgb(137 157 118) 90%,
-      rgb(137 153 93) 100%
+    0deg,
+    #5b6b4c 0%,
+    #90a386 50%,
+    #899d76 90%,
+    #6e7a4c 100%
   );
-  --color-led-background: rgb(137 157 118);
-  --color-led-outline: rgb(137 157 118);
+  --color-led-background: #899d76;
+  --color-led-outline-1: #899d76;
+  --color-led-outline-2: #96c178;
 
   --shadow-1: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -112,12 +122,12 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  transition: color 0.3s, background-color 0.3s;
+  transition: color var(--transition-timing), background-color var(--transition-timing);
   line-height: 1.6;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  font-size: 100%;
+  font-size: var(--font-size);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -132,10 +142,11 @@ body {
   background-color: transparent;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   text-decoration: none;
   color: var(--color-primary);
-  transition: 0.4s;
+  transition: var(--transition-timing);
 }
 
 @media (hover: hover) {
@@ -144,7 +155,6 @@ a:link, a:visited {
   }
   .button:hover {
     border-color: var(--color-border-hover);
-    /*background-color: var(--color-background-soft);*/
   }
   .button-text:hover {
     border: none;
@@ -163,10 +173,27 @@ a:link, a:visited {
 }
 
 @media screen and (max-width: 48rem) {
+  :root {
+    --font-size: 87.5%;
+  }
+
   .app-container {
     flex-wrap: wrap;
-    /*flex-direction: column;*/
     align-self: stretch;
     justify-content: space-evenly;
   }
+  .app-container > * {
+    margin-bottom: 0.5em;
+  }
 }
+
+@media screen and (max-width: 32rem) {
+  :root {
+    --font-size: 75%;
+  }
+  .app-container {
+    flex-direction: column;
+    padding: 0.25em 0.5em;
+  }
+}
+

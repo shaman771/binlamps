@@ -19,7 +19,7 @@ import LightBoard from './components/feature/LightBoard';
   display: grid;
   margin: 0 auto;
   font-weight: normal;
-  grid-template-rows: 10% auto 8%;
+  grid-template-rows: minmax(min-content, 10%) auto 8%;
   grid-template-columns: [start] 1fr [end];
   min-height: 100vh;
 }

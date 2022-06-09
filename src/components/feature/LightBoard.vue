@@ -64,7 +64,6 @@ watchEffect(() => {
   left: 0;
   min-height: 100%;
   fill: var(--color-background-mute);
-  animation: backdrop 2s ease-in-out;
 }
 
 .light-board__ramp {
@@ -77,13 +76,13 @@ watchEffect(() => {
 
 .light-board__ramp-item {
   opacity: 0;
-  transition: opacity 0.2s;
-  flex: 0 1 8em;
+  transition: opacity var(--transition-timing);
+  flex: 0 1 8rem;
   margin: 1em;
   cursor: pointer;
   border-radius: 10px;
   background-color: rgb(253, 253, 253, 0.6);
-  padding: 0.5em;
+  padding: 0.5rem;
   box-shadow: var(--shadow-1);
 }
 
@@ -95,19 +94,5 @@ watchEffect(() => {
 
 .light-board__ramp-item.is-visible {
   opacity: 1;
-}
-
-@keyframes backdrop {
-  0% {
-    fill: transparent;
-  }
-  35% {
-    fill: var(--color-background-mute);
-  }
-  85% {
-    fill: var(--color-primary-mute);
-    filter: drop-shadow(0 0 1px var(--color-primary-mute));
-    transform: scale(1.02);
-  }
 }
 </style>

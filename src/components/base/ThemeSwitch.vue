@@ -28,7 +28,7 @@ const store = useStore();
     height: 1.25rem;
     border: 1px solid var(--color-border);
     background-color: var(--color-background-mute);
-    transition: border-color .25s,background-color .25s;
+    transition: border-color var(--transition-timing), background-color var(--transition-timing);
     text-align: initial;
     padding: 0 0.125em;
     cursor: pointer;
@@ -41,14 +41,14 @@ const store = useStore();
     height: 95%;
     border-radius: 50%;
     background-color: var(--color-background);
-    transition: background-color .25s, transform .25s;
+    transition: background-color var(--transition-timing), transform var(--transition-timing);
   }
 
   .theme-switch__check .icon {
     position: absolute;
     top: 1px;
     left: 1px;
-    transition: opacity .25s;
+    transition: opacity var(--transition-timing), fill var(--transition-timing);
     border-radius: 50%;
     width: 90%;
     height: 90%;

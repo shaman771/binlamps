@@ -1,6 +1,8 @@
 # BinLamps
 
-This is a small toy project created as an exercise in using CSS custom properties (a.k.a. CSS variables) and direct manipulation of inline SVG. Built using Vue 3 (Vite flavor) and Composition API.
+This is a small toy project created as an exercise in using CSS custom properties (a.k.a. CSS variables) and direct manipulation of inline SVG as well as bitwise operations.
+
+Built using Vue 3 (Vite flavor) and Composition API.
 
 ## Recommended IDE Setup
 
@@ -45,4 +47,4 @@ npm run lint
 #### Credits:
 
 - Ticking Timebomb BB font: © 2012 Nate Piekos.
-- Realistic light bulb SVG image: https://pixabay.com/vectors/light-bulb-electric-bulb-lighting-147810/
+- Realistic light bulb SVG image: [Pixabay](https://pixabay.com/vectors/light-bulb-electric-bulb-lighting-147810/)

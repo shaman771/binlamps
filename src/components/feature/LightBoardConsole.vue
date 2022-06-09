@@ -68,39 +68,42 @@ const resultBaseOptions = [
   display: flex;
   justify-content: center;
   max-width: var(--spacing-max-width);
-  margin: 0 auto;
 }
 
 .light-board-console > * {
-  margin: 0 0.5em;
+  margin: 0 calc(0.2em + 0.5vw);
+}
+
+.light-board-console__display {
+  align-self: center;
+  flex: 1;
 }
 
 .light-board-console__display input {
   font-family: Timebomb, monospace;
-  font-size: 4rem;
+  font-size: calc(2em + 1.5vw);
   border-radius: 0.125em;
-  border: 4px ridge var(--color-border);
+  border: 3px ridge var(--color-led-outline-1);
   color: var(--color-led-text);
-  outline: 2px groove var(--color-border);
-  transition: outline 0.15s;
-  background: var(--color-led-gradient);
+  outline: 1px groove var(--color-led-outline-1);
+  transition: all var(--transition-timing);
   background: var(--color-led-background);
-  text-shadow: 2px 2px 1px #70875b;
+  background: var(--color-led-gradient);
+  text-shadow: 2px 2px 1px var(--color-led-text-shadow);
   width: 100%;
-  padding: 0.125em 0.25em 0;
+  padding: calc(0.05em + 0.5vw) calc(0.07em + 1vw) 0;
 }
 
 .light-board-console__display input:focus {
-  outline: 1px groove var(--color-primary-mute);
-  /*box-shadow: 0 0 4px var(--color-background-mute);*/
+  border-color: var(--color-led-outline-2);
 }
 
 .light-board-console__reset {
-  /*border: 5px inset var(--color-border);*/
+  font-size: 1.25em;
+  align-self: center;
   border: none;
-  font-size: 1.25rem;
   border-radius: 0.5rem;
-  padding: 0 1em;
+  padding: 0.75em 1em;
   background: #d66868;
   color: var(--color-background-soft);
   text-shadow: 1px 1px 2px #770f0f;
@@ -111,7 +114,7 @@ const resultBaseOptions = [
       rgba(214, 104, 104, 0.5) 100%
     ),
     linear-gradient(90deg, #d66868 0%, #ebb7b7 48%, #d66868 100%);
-  transition: all 0.2s ease-out;
+  transition: all var(--transition-timing) ease-out;
 }
 
 @media (hover: hover) {
@@ -128,6 +131,15 @@ const resultBaseOptions = [
         rgba(235, 183, 183, 1) 48%,
         #d87878 100%
       );
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  .light-board-console__reset {
+    font-size: 1em;
+    position: absolute;
+    top: -3.5em;
+    right: 0;
   }
 }
 </style>

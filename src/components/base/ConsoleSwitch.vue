@@ -79,6 +79,7 @@ function onChange(evt) {
 .console-switch {
   display: inline-flex;
   position: relative;
+  flex: 0 0 auto;
 }
 
 .console-switch::after {
@@ -91,7 +92,7 @@ function onChange(evt) {
   border: 1px solid var(--color-border);
   border-radius: 1em;
   z-index: -1;
-  top: 3px;
+  top: 0.35em;
 }
 
 .console-switch__indicator {
@@ -100,7 +101,7 @@ function onChange(evt) {
   left: 0.075em;
   height: 100%;
   width: 0.55em;
-  transition: transform 0.3s;
+  transition: transform var(--transition-timing);
   padding: 0.25em 0;
   z-index: -1;
   top: 3px;
@@ -148,13 +149,12 @@ function onChange(evt) {
   background-color: transparent;
   width: 0;
   height: 0;
-  transition: color 0.3s;
+  transition: color var(--transition-timing);
 }
 
 .console-switch__label {
   color: var(--color-text-soft);
   cursor: pointer;
-  margin-left: 0.25em;
 }
 
 .console-switch__native-input:checked + .console-switch__label {

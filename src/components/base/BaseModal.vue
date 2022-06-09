@@ -55,7 +55,7 @@ const emit = defineEmits(['close']);
 
 .modal-mask {
   background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-timing) ease;
 }
 
 .modal-container {
@@ -66,7 +66,7 @@ const emit = defineEmits(['close']);
   background-color: #fff;
   border-radius: 0.25rem;
   box-shadow: var(--shadow-1);
-  transition: all 0.3s ease;
+  transition: all var(--transition-timing) ease;
 }
 
 .modal-header h3 {
@@ -80,7 +80,7 @@ const emit = defineEmits(['close']);
 
 .modal-enter-active,
 .modal-leave-active {
-  transition: all 0.3s ease;
+  transition: all var(--transition-timing) ease;
 }
 
 .modal-enter-from,

@@ -1,7 +1,7 @@
 <template>
   <header class="app-header">
     <div class="app-container">
-      <div>
+      <div class="app-header__brand">
         <h1 title="Turn On a Binary Lamp!">
           <IconLightBulbSimple class="app-header__brand-icon" />
           <span class="cap">B</span>in<span class="cap">L</span>amps
@@ -11,7 +11,7 @@
         </h2>
       </div>
       <LightBoardConsole />
-      <ThemeSwitch />
+      <ThemeSwitch class="app-header__theme" />
     </div>
   </header>
 </template>
@@ -50,8 +50,8 @@ watchEffect(() => {
     var(--color-background-mute) 100%
   );
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease-out;
   width: 100%;
+  padding: calc(0.2em + 0.5vw) 0;
 }
 
 .dark .app-header {
@@ -69,6 +69,10 @@ watchEffect(() => {
   color: var(--color-primary);
 }
 
+.app-header__brand {
+  flex: 0 0 auto;
+}
+
 .app-header__brand-icon {
   width: 2.5rem;
 }
@@ -78,5 +82,13 @@ watchEffect(() => {
   margin: -1em 0 0 3em;
   color: var(--color-text-soft);
   letter-spacing: 0.05rem;
+}
+
+@media screen and (max-width: 48rem) {
+  .app-header__theme {
+    position: absolute;
+    left: calc(2em + 2vw);
+    top: 2em;
+  }
 }
 </style>
