@@ -28,5 +28,7 @@ jobs:
           git init
           git add -A
           git commit -m 'deploy'
-          git push -f https://${{ secrets.USER_NAME }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ secrets.USER_NAME }}/${{ secrets.REPO_NAME }}.git master:gh-pages
+          echo "https://${{ secrets.USER_NAME }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ secrets.USER_NAME }}/${{ secrets.REPO_NAME }}.git master:gh-pages"
+          
+          # git push -f https://${{ secrets.USER_NAME }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ secrets.USER_NAME }}/${{ secrets.REPO_NAME }}.git master:gh-pages
         shell: bash
