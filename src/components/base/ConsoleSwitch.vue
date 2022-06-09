@@ -146,11 +146,7 @@ function onChange(evt) {
 }
 
 .console-switch__native-input {
-  color: transparent;
-  background-color: transparent;
-  width: 0;
-  height: 0;
-  transition: color var(--transition-timing);
+  display: none;
 }
 
 .console-switch__label {
