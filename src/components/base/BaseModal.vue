@@ -29,6 +29,8 @@
 </template>
 
 <script setup>
+import { defineEmits, defineProps } from 'vue';
+
 defineProps({
   isShown: Boolean,
 });

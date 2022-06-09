@@ -31,6 +31,7 @@
 
 <script setup>
 import { computed, ref, watchEffect } from 'vue';
+import { defineEmits, defineProps } from 'vue';
 
 const props = defineProps({
   modelValue: {

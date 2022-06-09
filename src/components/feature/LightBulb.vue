@@ -8,6 +8,7 @@
 
 <script setup>
 import IconLightBulb from '../icons/IconLightBulb';
+import { defineProps } from 'vue';
 
 const props = defineProps({
   bit: {
