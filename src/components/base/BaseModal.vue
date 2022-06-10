@@ -65,9 +65,9 @@ const emit = defineEmits(['close']);
   max-width: 80%;
   margin: 0 auto;
   padding: 1.5rem 2rem;
-  background-color: #fff;
+  background-color: var(--color-background-soft);
   border-radius: 0.25rem;
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--shadow-2);
   transition: all var(--transition-timing) ease;
 }
 
