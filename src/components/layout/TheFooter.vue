@@ -3,10 +3,12 @@
     <div class="app-container">
       <address>
         <span class="app-footer__brand">BinLamps</span> visual toy ・
-        <a
-          href=""
-          @click.prevent="showAbout = true"
-        >About</a>
+        <button
+          class="button button-text"
+          @click="showAbout = true"
+        >
+          About
+        </button>
       </address>
       <span>Helps you understand binary numbers</span>
       <span>

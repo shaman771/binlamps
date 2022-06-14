@@ -22,6 +22,7 @@ export const useStore = defineStore({
     lighted: persistedState.lighted || 0,
   }),
   getters: {
+    isDarkTheme: (state) => state.theme !== 'light',
     bitRange: (state) =>
       Array.from(Array(state.wordSize))
         .map((item, idx) => {

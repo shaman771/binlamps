@@ -4,6 +4,7 @@
     type="button"
     role="switch"
     aria-label="toggle dark mode"
+    :aria-checked="store.isDarkTheme"
     @click="store.toggleTheme"
   >
     <span class="theme-switch__check">

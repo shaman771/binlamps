@@ -3,6 +3,7 @@
   src: url(../fonts/TickingTimebombBB_ital.woff2) format('woff2'),
     url(../fonts/TickingTimebombBB_ital.woff) format('woff'),
     url(../fonts/TickingTimebombBB_ital.ttf) format('truetype');
+  font-display: swap;
 }
 
 :root {
@@ -89,7 +90,8 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  transition: color var(--transition-timing), background-color var(--transition-timing);
+  transition: color var(--transition-timing),
+    background-color var(--transition-timing);
   line-height: 1.6;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -100,8 +102,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.button {
+/*.button {*/
+/*  cursor: pointer;*/
+/*  color: var(--color-primary);*/
+/*  transition: var(--transition-timing);*/
+/*}*/
+
+.button,
+a:link,
+a:visited {
   cursor: pointer;
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: var(--transition-timing);
 }
 
 .button-text {
@@ -109,24 +122,13 @@ body {
   background-color: transparent;
 }
 
-a:link,
-a:visited {
-  text-decoration: none;
-  color: var(--color-primary);
-  transition: var(--transition-timing);
-}
-
 @media (hover: hover) {
-  a:hover {
+  a:hover,
+  .button:hover {
     color: var(--color-primary-soft);
   }
   .button:hover {
     border-color: var(--color-border-hover);
-  }
-  .button-text:hover {
-    border: none;
-    color: var(--color-text);
-    background-color: transparent;
   }
 }
 
@@ -163,4 +165,3 @@ a:visited {
     padding: 0.25em 0.5em;
   }
 }
-

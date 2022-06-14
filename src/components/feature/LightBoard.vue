@@ -24,7 +24,7 @@ const store = useStore();
 const showState = ref(0);
 const timerQueue = [];
 const perUnitDuration = 200;
-let startDelay = 1800;
+let startDelay = 200;
 
 watchEffect(() => {
   const totalAppearDuration =
